@@ -18,7 +18,7 @@
     "react-router": "8.5.0"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.64.0",
+    "@cloudflare/vite-plugin": "^1.65.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",
@@ -26,7 +26,7 @@
     "@vitejs/plugin-react": "latest",
     "@vitejs/plugin-rsc": "latest",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.3.4",
-    "wrangler": "^4.151.2"
+    "vite": "^8.3.5",
+    "wrangler": "^4.152.0"
   }
 }

@@ -52,9 +52,9 @@
     "oxc-transform-react": "^0.155.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "rolldown": "^1.2.14",
-    "tsdown": "^0.23.1",
-    "vite": "^8.3.4"
+    "rolldown": "^1.2.15",
+    "tsdown": "^0.23.2",
+    "vite": "^8.3.5"
   },
   "peerDependencies": {
     "@rolldown/plugin-babel": "^0.1.7 || ^0.2.0",
