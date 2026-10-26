@@ -41,6 +41,29 @@ export function setOnClientReference(
   onClientReference = callback
 }
 
+/**
+ * Callback type for client reference module loads.
+ * Called during SSR every time React requests a client reference module.
+ * @experimental
+ */
+export type OnClientReferenceLoad = (reference: {
+  id: string
+  promise: Promise<unknown>
+}) => void
+
+let onClientReferenceLoad: OnClientReferenceLoad | undefined
+
+/**
+ * Register a callback to receive the promise of each client reference module
+ * load during SSR, e.g. to wait for them before rendering the HTML shell.
+ * @experimental
+ */
+export function setOnClientReferenceLoad(
+  callback: OnClientReferenceLoad | undefined,
+): void {
+  onClientReferenceLoad = callback
+}
+
 initialize()
 
 function initialize(): void {
@@ -71,6 +94,9 @@ function initialize(): void {
         const mod: any = await import_()
         return wrapResourceProxy(mod, id, deps)
       }
+    },
+    onRequire: (id, result) => {
+      onClientReferenceLoad?.({ id, promise: result as Promise<unknown> })
     },
   })
 }
